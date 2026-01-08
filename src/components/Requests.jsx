@@ -10,14 +10,14 @@ const Requests = () => {
 
   const reviewRequest = async (status, _id) => {
     try {
-       axios.post(
+      axios.post(
         BASE_URL + "/request/review/" + status + "/" + _id,
         {},
         { withCredentials: true }
       );
       dispatch(removeRequest(_id));
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
   };
 
@@ -29,7 +29,7 @@ const Requests = () => {
 
       dispatch(addRequests(res.data.data));
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
   };
 
@@ -53,7 +53,7 @@ const Requests = () => {
         return (
           <div
             key={_id}
-            className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto"
+            className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300  mx-auto"
           >
             <div>
               <img
